@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bw8lvl5ecvxjl"]
+
+[ext_resource type="Script" uid="uid://cpnicmc14h55j" path="res://Nodes/UI/InventorySlot.cs" id="1_fl8ke"]
+[ext_resource type="Texture2D" uid="uid://b3yk0m6hq5fbq" path="res://Assets/MakeshiftSword.png" id="2_qj0wi"]
+
+[node name="InventorySlot" type="Panel"]
+offset_right = 10.0
+offset_bottom = 10.0
+script = ExtResource("1_fl8ke")
+
+[node name="ItemSprite" type="Sprite2D" parent="."]
+scale = Vector2(5, 5)
+texture = ExtResource("2_qj0wi")
+centered = false

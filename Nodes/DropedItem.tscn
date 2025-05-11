@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1p8m2uxulo3w"]
+
+[ext_resource type="Script" uid="uid://dju5ueuhtdr3v" path="res://Scripts/DropedItem.cs" id="1_tnm2d"]
+[ext_resource type="PackedScene" uid="uid://7b6v6axwrh3r" path="res://Nodes/InventoryManager.tscn" id="2_m06ow"]
+[ext_resource type="Resource" uid="uid://ci60f21aiq0f0" path="res://Resources/Items/PlayerInventory.tres" id="3_uxcsx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7c42u"]
+radius = 7.07107
+
+[node name="DropedItem" type="CharacterBody2D" node_paths=PackedStringArray("collisionShape2D", "sprite2D")]
+script = ExtResource("1_tnm2d")
+collisionShape2D = NodePath("CollisionShape2D")
+sprite2D = NodePath("Sprite2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_7c42u")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="InventoryManager" parent="." instance=ExtResource("2_m06ow")]
+inventory = ExtResource("3_uxcsx")

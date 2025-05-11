@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Inventory" load_steps=3 format=3 uid="uid://ci60f21aiq0f0"]
+
+[ext_resource type="Script" uid="uid://ds8espy2v13gd" path="res://Resources/Scripts/Inventory.cs" id="1_avkxc"]
+[ext_resource type="Texture2D" uid="uid://dakpjk12j2b1v" path="res://Assets/inventory.png" id="2_hoam0"]
+
+[resource]
+script = ExtResource("1_avkxc")
+items = Array[Object]([null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
+texture = ExtResource("2_hoam0")
+rows = 4
+colls = 12
+hEdge = 3
+vEdge = 3
+hGap = 2
+vGap = 2
+metadata/_custom_type_script = "uid://ds8espy2v13gd"

@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://cup0itqm1c4ae"]
+
+[ext_resource type="Texture2D" uid="uid://cg3tavw3wp0qv" path="res://Assets/slime.png" id="1_cx5v1"]
+[ext_resource type="PackedScene" uid="uid://bayf3718n4dcv" path="res://Components/HurtBox.tscn" id="2_bwtns"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0htgg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_cx5v1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fp7ly"]
+radius = 13.0
+height = 44.0
+
+[node name="Slime" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0htgg")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(1, 3)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_fp7ly")
+
+[node name="HurtBox" parent="." instance=ExtResource("2_bwtns")]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(1, 3)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_fp7ly")

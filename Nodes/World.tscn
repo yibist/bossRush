@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://dan14b4dkgo55"]
+
+[ext_resource type="PackedScene" uid="uid://txobn7rrruc5" path="res://Nodes/Player.tscn" id="1_f3sb7"]
+[ext_resource type="Script" uid="uid://bfdprw8nhn5ok" path="res://Scripts/Camera2d.cs" id="3_aqk2v"]
+[ext_resource type="PackedScene" uid="uid://cup0itqm1c4ae" path="res://Nodes/Slime.tscn" id="3_owvh6"]
+[ext_resource type="PackedScene" uid="uid://c1p8m2uxulo3w" path="res://Nodes/DropedItem.tscn" id="4_04vk7"]
+[ext_resource type="Resource" uid="uid://c2ckbwlg58hv" path="res://Resources/Items/MakeshiftSword.tres" id="5_2e7c0"]
+[ext_resource type="PackedScene" uid="uid://cpq6781oph6rg" path="res://Nodes/UI/InventoryUi.tscn" id="6_2e7c0"]
+
+[node name="World" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_f3sb7")]
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+script = ExtResource("3_aqk2v")
+
+[node name="Slime" parent="." instance=ExtResource("3_owvh6")]
+position = Vector2(79, -2)
+
+[node name="DropedItem" parent="." instance=ExtResource("4_04vk7")]
+position = Vector2(36, -29)
+item = ExtResource("5_2e7c0")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="InventoryUI" parent="CanvasLayer" node_paths=PackedStringArray("owner") instance=ExtResource("6_2e7c0")]
+offset_left = -945.0
+offset_top = -525.0
+offset_right = -2061.0
+offset_bottom = -1296.0
+owner = NodePath("../../Player")

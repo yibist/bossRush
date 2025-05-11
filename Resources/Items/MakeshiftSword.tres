@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://c2ckbwlg58hv"]
+
+[ext_resource type="Script" uid="uid://dryl3tmfga31n" path="res://Resources/Scripts/Item.cs" id="1_36d2e"]
+[ext_resource type="Texture2D" uid="uid://b3yk0m6hq5fbq" path="res://Assets/MakeshiftSword.png" id="2_kmyfj"]
+
+[resource]
+script = ExtResource("1_36d2e")
+id = "1"
+name = "Makeshift Sword"
+texture = ExtResource("2_kmyfj")
+maxStackSize = 1
+metadata/_custom_type_script = "uid://dryl3tmfga31n"
